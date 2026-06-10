@@ -22,8 +22,9 @@ def load_data():
     rename_map = {
         'price': 'payment_value',
         'freight_value': 'freight_value',
-        'review_id': 'review_score'  # fallback caso haja confusão de nomes
+        'order_review_score': 'review_score'  # <--- Mapeamento ajustado para buscar o nome real do banco
     }
+    
     df = df.rename(columns={k: v for k, v in rename_map.items() if k in df.columns and v not in df.columns})
     
     # Conversão de datas
